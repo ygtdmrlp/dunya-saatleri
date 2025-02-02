@@ -54,7 +54,7 @@
 
 1. Repoyu klonlayın:
 ```bash
-git clone https://github.com/kullaniciadi/dunya-saatleri.git
+git clone https://github.com/ygtdmrlp/dunya-saatleri.git
 ```
 
 2. Proje dizinine gidin:
