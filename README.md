@@ -107,7 +107,7 @@ Bu proje MIT lisansı altında lisanslanmıştır. Detaylı bilgi için [LICENSE
 ## 📞 İletişim
 
 - Website: [dunyasaatleri](https://demosaat)
-- GitHub: [@dunyasaatleri](https://github.com/dunyasaatleri)
+- GitHub: [@ygtdmrlp](https://github.com/dunyasaatleri)
 - E-posta: codehtml@mail.com
 
 ## 🙏 Teşekkürler
