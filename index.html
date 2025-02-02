@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="195 ülkenin saatlerini tek bir yerden takip edin">
+    <meta name="keywords" content="dünya saatleri, saat dilimleri, alarm, kronometre">
+    <meta name="author" content="Dünya Saatleri">
+    <meta name="theme-color" content="#3498db">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Dünya Saatleri">
+    <meta name="application-name" content="Dünya Saatleri">
+    <meta name="msapplication-TileColor" content="#3498db">
+    <meta name="msapplication-config" content="browserconfig.xml">
+    <meta property="og:title" content="Dünya Saatleri">
+    <meta property="og:description" content="195 ülkenin saatlerini tek bir yerden takip edin">
+    <meta property="og:image" content="icons/icon-512x512.png">
+    <meta property="og:url" content="https://dunyasaatleri.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="license" content="MIT">
+    <title>Dünya Saatleri</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+    <link rel="mask-icon" href="icons/safari-pinned-tab.svg" color="#3498db">
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-clock"></i>
+                    <span>Dünya Saatleri</span>
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Ana Sayfa</a></li>
+                <li><a href="hakkinda.html">Hakkında</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="main-header">
+            <h1>Dünya Saatleri</h1>
+            <p class="subtitle">195' Ülkenin saatleri tek bir yerden takip edin</p>
+            
+            <div class="tools-container">
+                <div class="tool-buttons">
+                    <button id="showWorldClock" class="tool-btn active">
+                        <i class="fas fa-globe"></i> Dünya Saatleri
+                    </button>
+                    <button id="showAlarm" class="tool-btn">
+                        <i class="fas fa-bell"></i> Alarm
+                    </button>
+                    <button id="showStopwatch" class="tool-btn">
+                        <i class="fas fa-stopwatch"></i> Kronometre
+                    </button>
+                </div>
+            </div>
+
+            <!-- Dünya Saatleri Bölümü -->
+            <div id="worldClockSection" class="tool-section active">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Ülke adı yazarak arayın...">
+                </div>
+                <main class="clock-grid" id="clockGrid"></main>
+            </div>
+
+            <!-- Alarm Bölümü -->
+            <div id="alarmSection" class="tool-section">
+                <div class="alarm-container">
+                    <div class="alarm-set">
+                        <h2>Yeni Alarm Ekle</h2>
+                        <div class="alarm-inputs">
+                            <input type="time" id="alarmTime" required>
+                            <input type="text" id="alarmName" placeholder="Alarm Adı" required>
+                            <button id="setAlarm" class="primary-btn">
+                                <i class="fas fa-plus"></i> Alarm Ekle
+                            </button>
+                        </div>
+                    </div>
+                    <div class="alarm-list">
+                        <h3>Aktif Alarmlar</h3>
+                        <div id="activeAlarms" class="active-alarms">
+                            <!-- Alarmlar buraya eklenecek -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Kronometre Bölümü -->
+            <div id="stopwatchSection" class="tool-section">
+                <div class="stopwatch-container">
+                    <div class="stopwatch-display">
+                        <span id="stopwatchTime">00:00:00</span>
+                        <span id="stopwatchMs">.000</span>
+                    </div>
+                    <div class="stopwatch-controls">
+                        <button id="startStopwatch" class="primary-btn">
+                            <i class="fas fa-play"></i> Başlat
+                        </button>
+                        <button id="pauseStopwatch" class="secondary-btn" disabled>
+                            <i class="fas fa-pause"></i> Duraklat
+                        </button>
+                        <button id="resetStopwatch" class="danger-btn" disabled>
+                            <i class="fas fa-undo"></i> Sıfırla
+                        </button>
+                    </div>
+                    <div class="lap-times">
+                        <h3>Tur Zamanları</h3>
+                        <button id="lapButton" class="secondary-btn" disabled>
+                            <i class="fas fa-flag"></i> Tur
+                        </button>
+                        <ul id="lapList" class="lap-list">
+                            <!-- Tur zamanları buraya eklenecek -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <footer class="main-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Dünya Saatleri</h3>
+                <p>Dünyanın farklı ülkelerindeki saatleri kolayca takip edin.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hızlı Bağlantılar</h3>
+                <ul>
+                    <li><a href="index.html">Ana Sayfa</a></li>
+                    <li><a href="hakkinda.html">Hakkında</a></li>
+                    <li><a href="iletisim.html">İletişim</a></li>
+                    <li><a href="gizlilik-politikasi.html">Gizlilik Politikası</a></li>
+                    <li><a href="license.html">MIT Lisansı</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Bizi Takip Edin</h3>
+                <div class="social-links">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Dünya Saatleri. MIT Lisansı altında lisanslanmıştır.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="tools.js"></script>
+</body>
+</html> 
